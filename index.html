@@ -131,7 +131,7 @@ nav a.on{background:var(--ink);color:var(--bg)}
 <a href="#skills"><svg viewBox="0 0 24 24"><path d="M8 7l-5 5 5 5m8-10l5 5-5 5"/></svg>Skills</a>
 <a href="#contact"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>Contact</a>
 </nav>
-<div class="status"><i></i>Open to roles<a href="#contact">Get in touch</a></div>
+<a class="status" href="#contact" style="text-decoration:none;cursor:pointer"><i></i>Open to roles</a>
 </aside>
 
 <main>
@@ -237,7 +237,8 @@ nav a.on{background:var(--ink);color:var(--bg)}
 <section class="view contact" id="v-contact">
 <h1>Hiring for a data, business analysis or software role?</h1>
 <p class="lead">I’m open to Data Analyst, Business Analyst and Associate Software Engineer roles.</p>
-<div class="card"><a class="mail" href="mailto:bhuvana261103@gmail.com">bhuvana261103@gmail.com</a>
+<div class="card"><a class="mail" href="mailto:bhuvana261103@gmail.com" target="_blank" rel="noopener">bhuvana261103@gmail.com</a>
+<div class="links" style="margin-top:14px"><a class="btn p" href="https://mail.google.com/mail/?view=cm&fs=1&to=bhuvana261103@gmail.com&su=Hello%20Bhuvaneshwari" target="_blank" rel="noopener">Write in Gmail</a><button type="button" class="btn" id="copymail" style="font:inherit;font-weight:600;cursor:pointer">Copy email</button></div>
 <div class="links" style="margin-top:18px"><a class="btn" href="https://www.linkedin.com/in/bhuvaneshwari-v-703696356/" target="_blank" rel="noopener">LinkedIn</a><a class="btn" href="https://github.com/Bhuvana-sketch" target="_blank" rel="noopener">GitHub</a><a class="btn p" href="https://1drv.ms/b/c/26c60f5c6e5eefc5/IQBV212UkcqvTbJxOtd05RckAcQh1GTQyRzysG3HkdbAjb4?e=i1kBY3" target="_blank" rel="noopener">Download resume</a></div></div>
 </section>
 </main>
@@ -254,6 +255,9 @@ document.querySelectorAll('.picker button').forEach(function(b,i){b.onclick=func
 document.querySelectorAll('[data-go]').forEach(function(b){b.onclick=function(){pick(+b.dataset.go);location.hash='projects'}});
 document.querySelectorAll('.gal').forEach(function(g){var t=g.querySelectorAll('[role=tab]'),s=g.querySelectorAll('.shot');t.forEach(function(x,i){x.onclick=function(){t.forEach(function(y,j){y.setAttribute('aria-selected',j===i?'true':'false');s[j].hidden=j!==i})}})});
 window.addEventListener('hashchange',route);route();
+(function(){var b=document.getElementById('copymail'),e='bhuvana261103@gmail.com';if(!b)return;b.addEventListener('click',function(){var done=function(){b.textContent='Copied!';setTimeout(function(){b.textContent='Copy email'},2000)};
+ try{navigator.clipboard.writeText(e).then(done,fb)}catch(x){fb()}
+ function fb(){var t=document.createElement('textarea');t.value=e;t.style.position='fixed';t.style.opacity='0';document.body.appendChild(t);t.select();try{document.execCommand('copy');done()}catch(y){b.textContent=e}document.body.removeChild(t)}})})();
 
 (function(){function run(){document.querySelectorAll('#v-overview .kpi b').forEach(function(b){if(!b.dataset.t)b.dataset.t=b.textContent;var t=b.dataset.t,m=t.match(/[\d,.]+/);if(!m)return;var n=parseFloat(m[0].replace(/,/g,'')),dec=(m[0].split('.')[1]||'').length,pre=t.slice(0,m.index),suf=t.slice(m.index+m[0].length),s=null;
  if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;
